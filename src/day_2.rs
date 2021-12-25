@@ -1,3 +1,3 @@
-pub fn day_2() -> (String, String) {
+pub fn day_2(_input: &str) -> (String, String) {
     todo!()
 }

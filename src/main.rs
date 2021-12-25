@@ -1,20 +1,12 @@
 use std::env;
 
-mod day_1;
-mod day_2;
+use advent_of_code_2021_rust::run_day;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
 
     if let Some(day) = args.get(1) {
-        let (part_a, part_b) = match day.as_str() {
-            "1" => day_1::day_1(),
-            "2" => day_2::day_2(),
-            _ => panic!(
-                "Day {} has not yet been finished or added to the list of answers",
-                day
-            ),
-        };
+        let (part_a, part_b) = run_day(day);
 
         println!("Answer for day {}:", day);
         println!("Part A: {}", part_a);
