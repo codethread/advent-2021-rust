@@ -5,38 +5,26 @@ pub fn day_1(input: &str) -> (String, String) {
 }
 
 fn part_1(report: &str) -> u16 {
-    let depths: Vec<u16> = utils::input_to_numbers(report);
+    let depths = utils::input_to_numbers(report);
 
     depths.windows(2).fold(0, |depth, ns| match ns {
-        [n1, n2] => {
-            if n2 > n1 {
-                depth + 1
-            } else {
-                depth
-            }
-        }
-        _ => unreachable!(),
+        [n1, n2] if n2 > n1 => depth + 1,
+        _ => depth,
     })
 }
 
 fn part_2(report: &str) -> u16 {
-    let depths: Vec<u16> = utils::input_to_numbers(report);
+    let depths = utils::input_to_numbers(report);
 
-    depths
+    let grouped_depths = depths
         .windows(3)
         .map(|nums| nums.iter().sum::<u16>())
-        .collect::<Vec<u16>>()
-        .windows(2)
-        .fold(0, |depth, ns| match ns {
-            [n1, n2] => {
-                if n2 > n1 {
-                    depth + 1
-                } else {
-                    depth
-                }
-            }
-            _ => unreachable!(),
-        })
+        .collect::<Vec<u16>>();
+
+    grouped_depths.windows(2).fold(0, |depth, ns| match ns {
+        [n1, n2] if n2 > n1 => depth + 1,
+        _ => depth,
+    })
 }
 
 #[cfg(test)]
