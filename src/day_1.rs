@@ -43,9 +43,7 @@ fn part_2(report: &str) -> u16 {
 mod tests {
     use super::*;
 
-    #[test]
-    fn test_part_1() {
-        let input = "199
+    const INPUT: &str = "199
 200
 208
 210
@@ -56,22 +54,13 @@ mod tests {
 260
 263";
 
-        assert_eq!(part_1(input), 7);
+    #[test]
+    fn test_part_1() {
+        assert_eq!(part_1(INPUT), 7);
     }
 
     #[test]
     fn test_part_2() {
-        let input = "199
-200
-208
-210
-200
-207
-240
-269
-260
-263";
-
-        assert_eq!(part_2(input), 5);
+        assert_eq!(part_2(INPUT), 5);
     }
 }
