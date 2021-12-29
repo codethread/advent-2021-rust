@@ -17,7 +17,7 @@ fn part_2(report: &str) -> u16 {
     let depths = utils::input_to_numbers(report);
 
     depths.windows(4).fold(0, |depth, nums| match nums {
-        [a, b, c, d] if b + c + d > a + b + c => depth + 1,
+        [a, _, _, d] if d > a => depth + 1,
         _ => depth,
     })
 }
