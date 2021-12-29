@@ -7,7 +7,7 @@ pub fn day_1(input: &str) -> (String, String) {
 fn part_1(report: &str) -> u16 {
     let depths = utils::input_to_numbers(report);
 
-    depths.windows(2).fold(0, |depth, ns| match ns {
+    depths.windows(2).fold(0, |depth, nums| match nums {
         [n1, n2] if n2 > n1 => depth + 1,
         _ => depth,
     })
@@ -16,13 +16,8 @@ fn part_1(report: &str) -> u16 {
 fn part_2(report: &str) -> u16 {
     let depths = utils::input_to_numbers(report);
 
-    let grouped_depths = depths
-        .windows(3)
-        .map(|nums| nums.iter().sum::<u16>())
-        .collect::<Vec<u16>>();
-
-    grouped_depths.windows(2).fold(0, |depth, ns| match ns {
-        [n1, n2] if n2 > n1 => depth + 1,
+    depths.windows(4).fold(0, |depth, nums| match nums {
+        [a, b, c, d] if b + c + d > a + b + c => depth + 1,
         _ => depth,
     })
 }
