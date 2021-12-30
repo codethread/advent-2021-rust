@@ -28,4 +28,12 @@ mod tests {
     fn test_run_day_1() {
         assert_eq!(run_day("1"), ("1681".to_string(), "1704".to_string()))
     }
+
+    #[test]
+    fn test_run_day_2() {
+        assert_eq!(
+            run_day("2"),
+            ("1507611".to_string(), "1880593125".to_string())
+        )
+    }
 }

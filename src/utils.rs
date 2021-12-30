@@ -1,4 +1,4 @@
-pub fn input_to_numbers(input: &str) -> Vec<u16> {
+pub fn input_to_numbers(input: &str) -> Vec<u32> {
     input
         .split('\n')
         .map(|n| {

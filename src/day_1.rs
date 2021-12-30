@@ -4,7 +4,7 @@ pub fn day_1(input: &str) -> (String, String) {
     (part_1(input).to_string(), part_2(input).to_string())
 }
 
-fn part_1(report: &str) -> u16 {
+fn part_1(report: &str) -> u32 {
     let depths = utils::input_to_numbers(report);
 
     depths.windows(2).fold(0, |depth, nums| match nums {
@@ -13,7 +13,7 @@ fn part_1(report: &str) -> u16 {
     })
 }
 
-fn part_2(report: &str) -> u16 {
+fn part_2(report: &str) -> u32 {
     let depths = utils::input_to_numbers(report);
 
     depths.windows(4).fold(0, |depth, nums| match nums {
