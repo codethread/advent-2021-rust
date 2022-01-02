@@ -1,0 +1,27 @@
+pub fn day_x(input: &str) -> (String, String) {
+    (part_1(input).to_string(), part_2(input).to_string())
+}
+
+fn part_1(_: &str) -> u32 {
+    todo!();
+}
+fn part_2(_: &str) -> u32 {
+    todo!()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const INPUT: &str = "";
+
+    #[test]
+    fn test_part_1() {
+        assert_eq!(part_1(INPUT), 0);
+    }
+
+    #[test]
+    fn test_part_2() {
+        assert_eq!(part_2(INPUT), 0);
+    }
+}

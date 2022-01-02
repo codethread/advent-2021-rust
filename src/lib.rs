@@ -2,6 +2,7 @@ use std::fs::read_to_string;
 
 mod day_1;
 mod day_2;
+mod day_3;
 mod utils;
 
 pub fn run_day(day: &str) -> (String, String) {
@@ -13,6 +14,7 @@ pub fn run_day(day: &str) -> (String, String) {
     match day {
         "1" => day_1::day_1(&input),
         "2" => day_2::day_2(&input),
+        "3" => day_3::day_3(&input),
         _ => panic!(
             "Day {} has not yet been finished or added to the list of answers",
             day
@@ -35,5 +37,10 @@ mod tests {
             run_day("2"),
             ("1507611".to_string(), "1880593125".to_string())
         )
+    }
+
+    #[test]
+    fn test_run_day_3() {
+        assert_eq!(run_day("3"), ("2640986".to_string(), "1".to_string()))
     }
 }
